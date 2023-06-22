@@ -1,11 +1,8 @@
-FROM nextcloud:27
+FROM nextcloud:latest
 
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
+    apt-get install -y software-properties-common ffmpeg && \
     apt-add-repository -y non-free && \
     apt-get update && \
-    apt-get install -y intel-media-va-driver-non-free ffmpeg && \
+    apt-get install -y intel-media-va-driver-non-free && \
     rm -rf /var/lib/apt/lists/*
-
-COPY start.sh /
-CMD /start.sh
