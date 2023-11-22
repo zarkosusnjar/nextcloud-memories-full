@@ -6,3 +6,6 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y intel-media-va-driver-non-free && \
     rm -rf /var/lib/apt/lists/*
+
+COPY start.sh /
+CMD /start.sh
